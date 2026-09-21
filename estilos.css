@@ -1,16 +1,9 @@
-/* ===== ESTILOS GENERALES ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: min(100%, 360px);
     min-height: 100vh;
     margin: 0 auto;
-    background: #1e1e2f;
+    background: #03045e;
     color: white;
     display: flex;
     flex-direction: column;
@@ -22,7 +15,6 @@ body {
 .nav-link {
     display: inline-block;
     background: #34344a;
-    color: white !important;
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 10px;
