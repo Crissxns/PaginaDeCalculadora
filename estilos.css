@@ -1,158 +1,124 @@
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
-
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    width: min(100%, 360px);
-    min-height: 100vh;
-    margin: 0 auto;
-    background: #03045e;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
+font-family: Arial, Helvetica, sans-serif;
+min-height: 100vh;
+background: #03045e;
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
 }
-
-
+.nav-item {
+list-style: none;
+margin-bottom: 20px;
+}
 .nav-link {
-    display: inline-block;
-    background: #34344a;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    transition: 0.2s;
+background: #34344a;
+color: white !important;
+padding: 10px 20px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
 }
-
-.nav-link:hover {
-    background: #4b4b68;
-    color: white !important;
-}
-
 .dropdown-menu {
-    background: #2b2b3d;
-    border: none;
-    border-radius: 10px;
-    padding: 8px;
+background: #2b2b3d;
+border: none;
+border-radius: 10px;
 }
-
 .dropdown-item {
-    color: white;
-    border-radius: 7px;
-    padding: 10px 15px;
+color: white;
 }
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-    background: #45455c;
-    color: white;
+.dropdown-item:hover {
+background: #45455c;
+color: white;
 }
-
-
 h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    text-align: center;
+font-size: 32px;
+margin-bottom: 15px;
+text-align: center;
 }
-
-
+.imagenes {
+display: flex;
+justify-content: center;
+width: 100%;
+max-width: 650px; /* Tamaño amplio para leer las explicaciones claramente */
+margin: 15px auto 25px auto;
+}
+.imagenes img {
+width: 100%; /* Ocupa todo el ancho de su contenedor / max-width: 100%; / Se adapta si la pantalla es más pequeña / height: auto; / Mantiene la proporción de la imagen */
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+background-color: #ffffff;
+padding: 6px;
+}
+.calculadora {
+background: #181824;
+padding: 20px;
+border-radius: 16px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 320px;
+}
 #Pantalla {
-    width: 310px;
-    height: 70px;
-    background: #181824;
-    color: white;
-    border: 2px solid #45455c;
-    border-radius: 12px;
-    outline: none;
-    font-size: 32px;
-    text-align: right;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.35);
+width: 100%;
+height: 60px;
+background: #0d0d14;
+color: white;
+border: 2px solid #45455c;
+border-radius: 10px;
+font-size: 28px;
+text-align: right;
+padding: 10px 15px;
+margin-bottom: 15px;
+outline: none;
 }
-
-
-br {
-    display: none;
+.botones {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 10px;
+width: 100%;
 }
-
-
 button {
-    width: 68px;
-    height: 58px;
-    margin: 5px;
-    border: none;
-    border-radius: 12px;
-    background: #45455c;
-    color: white;
-    font-size: 21px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.15s ease;
-    vertical-align: middle;
+width: 100%;
+height: 55px;
+border: none;
+border-radius: 10px;
+background: #45455c;
+color: white;
+font-size: 20px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.15s ease;
 }
-
 button:hover {
-    background: #5b5b76;
-    transform: translateY(-2px);
+background: #5b5b76;
 }
-
 button:active {
-    transform: scale(0.95);
+transform: scale(0.95);
 }
-
-
-button[onclick="agregar('+')"],
-button[onclick="agregar('-')"],
-button[onclick="agregar('*')"],
-button[onclick="agregar('/')"] {
-    background: #ff9500;
+.btn-operador {
+background: #ff9500;
 }
-
-button[onclick="agregar('+')"]:hover,
-button[onclick="agregar('-')"]:hover,
-button[onclick="agregar('*')"]:hover,
-button[onclick="agregar('/')"]:hover {
-    background: #ffad32;
+.btn-operador:hover {
+background: #ffad32;
 }
-
-
-button[onclick="calcular()"] {
-    background: #28a745;
+.btn-igual {
+background: #28a745;
 }
-
-button[onclick="calcular()"]:hover {
-    background: #35c456;
+.btn-igual:hover {
+background: #35c456;
 }
-
-
-button[onclick="eliminar()"] {
-    width: 146px;
-    background: #dc3545;
+.btn-eliminar {
+background: #dc3545;
+grid-column: span 2;
 }
-
-button[onclick="eliminar()"]:hover {
-    background: #e65362;
+.btn-eliminar:hover {
+background: #e65362;
 }
-
-.imagenes{
-   
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%; 
-
-}
-
-   
-
-
-
